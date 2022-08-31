@@ -29,28 +29,27 @@ import Card from "./Card";
     setCurrCardIdx(currCardIdx - 1);
   }
 
-  const showLeftArrow = currCardIdx > 0 ? true : null;
-  const showRightArrow = currCardIdx < (total - 1) ?  true : null;
-  // impliment a way to hide the elements isntead of setting them to null
+  const leftArrow = currCardIdx > 0 ? "bi bi-arrow-left-circle" : " ";
+  const rightArrow = currCardIdx < (total - 1) ? "bi bi-arrow-right-circle" : " ";
 
   return (
     <div className="Carousel">
       <h1>{title}</h1>
       <div className="Carousel-main">
-       { showLeftArrow && <i
-          className="bi bi-arrow-left-circle"
+        <i
+          className={ leftArrow }
           onClick={goBackward}
-        /> }
+        />
         <Card
           caption={currCard.caption}
           src={currCard.src}
           currNum={currCardIdx + 1}
           totalNum={total}
         />
-        {showRightArrow && <i
-          className="bi bi-arrow-right-circle"
+        <i
+          className={ rightArrow }
           onClick={goForward}
-        />}
+        />
       </div>
     </div>
   );

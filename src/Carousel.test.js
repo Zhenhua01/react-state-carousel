@@ -4,7 +4,6 @@ import TEST_IMAGES from "./_testCommon.js";
 
 
 it("renders without crashing", function () {
-  // this is a low-value test, but better than nothing
   render(<Carousel photos= {TEST_IMAGES} title="images for testing" /> );
 });
 
@@ -85,9 +84,9 @@ it("removes right arrow when on last image", function() {
 
   // move forward in the carousel
   const rightArrow = container.querySelector(".bi-arrow-right-circle");
-  fireEvent.click(rightArrow);
-  fireEvent.click(rightArrow);
-
+  for (let i=0; i<TEST_IMAGES.length - 1; i++) {
+    fireEvent.click(rightArrow);
+  }
 
   // expect the third image to show
   expect(

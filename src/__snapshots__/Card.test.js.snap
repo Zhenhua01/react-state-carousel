@@ -13,7 +13,7 @@ exports[`matches snapshot 1`] = `
     <img
       alt="test"
       class="Card-image"
-      src="/static/media/image1.08e1519e765278b10548.jpg"
+      src="test_src"
     />
     <small
       class="Card-small"
